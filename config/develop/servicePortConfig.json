@@ -1,0 +1,15 @@
+{
+    "logOptions": {
+        "logDirectory": "/home/rahul/khanaanywherelog",
+        "fileNamePattern": "khanaanywhere-<DATE>.log",
+        "errorFileNamePattern": "khanaanywhere-error-<DATE>.log",
+        "dateFormat": "YYYY.MM.DD",
+        "maxSize": "50m",
+        "maxFiles": "30d",
+        "level": "all",
+        "logLevel": "silly"
+    },
+    "servicePortMappings": {
+        "userProfileService": 8888
+    }
+}
