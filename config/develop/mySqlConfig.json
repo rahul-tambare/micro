@@ -1,0 +1,31 @@
+{
+    "MySqlWriteInstance": {
+        "url": "127.0.0.1",
+        "port": "",
+        "database": "khana_anywhere",
+        "user": "root",
+        "pass": "Khana@2020",
+        "maxPreparedStatements": 500,
+        "opts": "",
+        "connectTimeout": 30000
+    },
+    "MySqlReadInstance": {
+        "url": "",
+        "port": 5046,
+        "database": "",
+        "user": "",
+        "pass": "",
+        "maxPreparedStatements": 500,
+        "opts": "",
+        "connectTimeout": 30000
+    },
+    "MySqlReadPoolInstance": {
+        "url": "",
+        "port": 5046,
+        "database": "",
+        "user": "",
+        "pass": "",
+        "maxPreparedStatements": 500,
+        "opts": ""
+    }
+}

@@ -1,1 +1,5 @@
 # micro
+
+read 
+update
+write

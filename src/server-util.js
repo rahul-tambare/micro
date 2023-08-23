@@ -41,8 +41,8 @@ exports.startServers = (workerCount, next)=> {
     }else{
         var serverFactory = require('./lib/factory.js');
         serverFactory.createServer(
-            'userProfileService',
-            kaConfig["servicePortMappings"]["userProfileService"]
+            'userProfileServer',
+            kaConfig["servicePortMappings"]["userProfileServer"]
         ); 
     }
 }    

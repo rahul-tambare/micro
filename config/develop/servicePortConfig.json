@@ -10,6 +10,7 @@
         "logLevel": "silly"
     },
     "servicePortMappings": {
-        "userProfileService": 8888
-    }
+        "userProfileServer": 8844
+    },
+    "secretKey":"khana@2020"
 }

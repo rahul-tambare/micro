@@ -49,11 +49,51 @@ let statusMessages = {
     505: "HTTP Version Not Supported",
     511: "Network Authentication Required"
 }
-exports.response = (res,data,statusCode,message="",status ="success") =>{
+
+let resStatusAndMessage ={
+    SI200:{
+        message:"data inserted successfylly",
+        status:"success",
+        statusCode:200
+    },
+    SU200:{
+        message:"data updated successfully",
+        status:"success",
+        statusCode:200
+    },SF200:{
+        message:"data fetched successfully",
+        status:"success",
+        statusCode:200
+    },E400:{
+        message:"data not found",
+        status:"failure",
+        statusCode:400
+    },E503:{
+        message:"internel server error",
+        status:"failure",
+        statusCode:503
+    }
+}
+
+exports.response = ({res,data,statusCode,message="",status ="success"}) =>{
     res.status(statusCode).json({
-        status: "success",
-        message: message,
-        requestId: null,
+        status,
+        message,
+        requestId:null,
         result: data
     });
 }
+
+exports.resStatus = (key)=>{
+    return resStatusAndMessage[key];
+}
+
+module.exports.mobileRegex = /^([4-9][0-9]{9,11})$/;
+module.exports.dateFormatSlashYMD = /([12]\d{3}\/(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01]))/;
+module.exports.dateFormatHypenYMD = /^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$/;
+module.exports.pinCodeRegix = /^[1-9][0-9]{5}$/;
+module.exports.rangeFormat = /^\d:\d$/;
+module.exports.emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
+// module.exports.emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+module.exports.rangeDateFormatHypenYMD = /^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])):([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$/;
+module.exports.csvInjectionRegex = /^[+=@-].*/;
